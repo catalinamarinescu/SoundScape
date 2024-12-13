@@ -1,0 +1,135 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.173, 51.516]
+      },
+      "properties": {
+        "name": "Abbey Road Studios",
+        "type": "Recording Studio",
+        "artist": "The Beatles",
+        "event_year": 1969
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9857, 40.7681]
+      },
+      "properties": {
+        "name": "Carnegie Hall",
+        "type": "Concert Hall",
+        "artist": "Various",
+        "event_year": 1891
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.3292, 34.0981]
+      },
+      "properties": {
+        "name": "Capitol Studios",
+        "type": "Recording Studio",
+        "artist": "Frank Sinatra",
+        "event_year": 1956
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.2945, 48.8584]
+      },
+      "properties": {
+        "name": "Olympia Paris",
+        "type": "Concert Hall",
+        "artist": "Édith Piaf",
+        "event_year": 1958
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.4105, 52.52]
+      },
+      "properties": {
+        "name": "Hansa Studios",
+        "type": "Recording Studio",
+        "artist": "David Bowie",
+        "event_year": 1977
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.6917, 35.6895]
+      },
+      "properties": {
+        "name": "Nippon Budokan",
+        "type": "Concert Hall",
+        "artist": "The Beatles",
+        "event_year": 1966
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0369, 38.9072]
+      },
+      "properties": {
+        "name": "Kennedy Center",
+        "type": "Concert Hall",
+        "artist": "Various",
+        "event_year": 1971
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.128, 51.5033]
+      },
+      "properties": {
+        "name": "Royal Albert Hall",
+        "type": "Concert Hall",
+        "artist": "Various",
+        "event_year": 1871
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.6232, 41.8826]
+      },
+      "properties": {
+        "name": "Chess Records",
+        "type": "Recording Studio",
+        "artist": "Muddy Waters",
+        "event_year": 1950
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [144.9631, -37.8136]
+      },
+      "properties": {
+        "name": "Melbourne Recital Centre",
+        "type": "Concert Hall",
+        "artist": "Various",
+        "event_year": 2009
+      }
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import React, { useState, useEffect } from "react";
 // import { initializeApp } from "firebase/app";
 // import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
@@ -144,12 +143,18 @@
 
 // export default App;
 
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import AuthPage from './Backend/Auth/authPage';
-import HomePage from './Backend/Auth/home'; // Componenta pentru pagina principală
-import { auth } from './Firebase/firebase'; // Firebase Auth
-import { useAuthState } from 'react-firebase-hooks/auth';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import LoginPage from "./Backend/Auth/login";
+import RegisterPage from "./Backend/Auth/register";
+import HomePage from "./Backend/Auth/home"; // Componenta pentru pagina principală
+import { auth } from "./Firebase/firebase"; // Firebase Auth
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const App = () => {
   const [user] = useAuthState(auth); // Verifică dacă utilizatorul este autentificat
@@ -158,13 +163,19 @@ const App = () => {
     <Router>
       <Routes>
         {/* Redirecționează utilizatorii neautentificați la pagina de login */}
-        <Route path="/auth" element={!user ? <AuthPage /> : <Navigate to="/" />} />
-        
+        <Route path="/register" element={<RegisterPage />} />
+
         {/* Pagina principală doar pentru utilizatorii autentificați */}
-        <Route path="/" element={user ? <HomePage /> : <Navigate to="/auth" />} />
-        
+        <Route
+          path="/login"
+          element={!user ? <LoginPage /> : <Navigate to="/" />}
+        />
+
         {/* Fallback: redirecționează utilizatorii pe baza stării lor */}
-        <Route path="*" element={<Navigate to={user ? "/" : "/auth"} />} />
+        <Route
+          path="/"
+          element={user ? <HomePage /> : <Navigate to="/login" />}
+        />
       </Routes>
     </Router>
   );
@@ -172,30 +183,22 @@ const App = () => {
 
 export default App;
 
-=======
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//   return (
+//     <Router>
+//       <Routes>
+//         {/* Redirecționează utilizatorii neautentificați la pagina de login */}
+//         <Route path="/auth" element={!user ? <AuthPage /> : <Navigate to="/" />} />
 
-export default App;
->>>>>>> 5b247ea0dfc92f707a037726d7ffe0d8207913f0
+//         {/* Pagina principală doar pentru utilizatorii autentificați */}
+//         <Route path="/" element={user ? <HomePage /> : <Navigate to="/auth" />} />
+
+//         {/* Fallback: redirecționează utilizatorii pe baza stării lor */}
+//         <Route path="*" element={<Navigate to={user ? "/" : "/auth"} />} />
+//       </Routes>
+//     </Router>
+//   );
+
+// export default App;

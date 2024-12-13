@@ -4,14 +4,16 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(120deg, #4a90e2, #50c878);
-  color: white;
-  font-family: Arial, sans-serif;
+  /* background: linear-gradient(120deg, #4a90e2, #50c878); */
+  background-image: url("/home/ioana/SoundScape/src/music-notes-illustration/10560417.jpg");
+  color: rgb(5, 118, 174);
+  font-family: Papyrus;
+  font-size: 20px;
 }
 
 .auth-form {
   background: white;
-  color: black;
+  color:rgb(0, 87, 131);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -27,7 +29,7 @@
   width: 90%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ddd;
+  border: 1px solid #52bced;
   border-radius: 5px;
 }
 
@@ -36,17 +38,17 @@
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #4a90e2;
+  background-color: #db64b5;
   color: white;
   cursor: pointer;
 }
 
 .auth-form button:hover {
-  background-color: #357abd;
+  background-color: #de42c1;
 }
 
 .auth-form .link {
-  color: #4a90e2;
+  color: #ff81db;
   cursor: pointer;
   text-decoration: underline;
 }
