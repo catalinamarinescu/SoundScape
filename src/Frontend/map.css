@@ -1,0 +1,23 @@
+
+.map-page {
+    position: relative;
+    padding: 100px;
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #dd26af;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .back-button:hover {
+    background-color: #005fa3;
+  }
+  

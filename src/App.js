@@ -152,6 +152,7 @@ import {
 } from "react-router-dom";
 import LoginPage from "./Backend/Auth/login";
 import RegisterPage from "./Backend/Auth/register";
+import MapPage from "./Backend/Auth/musicMap";
 import HomePage from "./Backend/Auth/home"; // Componenta pentru pagina principală
 import { auth } from "./Firebase/firebase"; // Firebase Auth
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -162,19 +163,25 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Redirecționează utilizatorii neautentificați la pagina de login */}
+        {/* Redirecționează utilizatorii neautentificați la pagina de înregistrare */}
         <Route path="/register" element={<RegisterPage />} />
 
-        {/* Pagina principală doar pentru utilizatorii autentificați */}
+        {/* Pagina de login: doar utilizatorii neautentificați pot ajunge aici */}
         <Route
           path="/login"
           element={!user ? <LoginPage /> : <Navigate to="/" />}
         />
 
-        {/* Fallback: redirecționează utilizatorii pe baza stării lor */}
+        {/* Pagina principală: doar utilizatorii autentificați pot ajunge aici */}
         <Route
           path="/"
           element={user ? <HomePage /> : <Navigate to="/login" />}
+        />
+
+        {/* Pagina hărții: doar utilizatorii autentificați pot accesa această pagină */}
+        <Route
+          path="/map"
+          element={user ? <MapPage /> : <Navigate to="/login" />}
         />
       </Routes>
     </Router>

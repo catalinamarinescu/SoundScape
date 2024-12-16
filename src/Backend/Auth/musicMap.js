@@ -109,3 +109,72 @@
 // };
 
 // export default MusicMap;
+
+import React, { useEffect, useRef } from "react";
+import MapView from "@arcgis/core/views/MapView";
+import WebMap from "@arcgis/core/WebMap";
+import Search from "@arcgis/core/widgets/Search";
+import { useNavigate } from "react-router-dom";
+import '../../Frontend/map.css'; // Adaugă stiluri pentru hartă
+
+const MapPage = () => {
+    const mapDiv = useRef(null);
+    const navigate = useNavigate(); // Creează instanța navigate
+  
+    useEffect(() => {
+      let mapView;
+  
+      if (mapDiv.current) {
+        // Creează un WebMap ArcGIS
+        const webMap = new WebMap({
+          portalItem: {
+            id: "338350419fdb4d5b9363ae8d91182416", // ID-ul WebMap-ului
+          },
+        });
+  
+        // Creează MapView
+        mapView = new MapView({
+          container: mapDiv.current,
+          map: webMap,
+          zoom: 12,
+          center: [2.3522, 48.8566], // Coordonatele centrului (Paris)
+        });
+  
+        // Adaugă widget-ul Search
+        mapView.when(() => {
+          const searchWidget = new Search({
+            view: mapView, // Leagă widget-ul de MapView
+          });
+  
+          mapView.ui.add(searchWidget, {
+            position: "top-right", // Plasează widget-ul în colțul din dreapta sus
+          });
+        });
+      }
+  
+      return () => {
+        if (mapView) {
+          mapView.destroy(); // Curăță resursele la demontare
+        }
+      };
+    }, []);
+  
+    // Funcția pentru a naviga înapoi pe pagina principală
+    const handleBackClick = () => {
+      navigate("/"); // Navighează înapoi pe pagina principală
+    };
+  
+    return (
+      <div className="map-page">
+        {/* Butonul de "Back" */}
+        <button onClick={handleBackClick} className="back-button">
+          &larr; Back
+        </button>
+  
+        {/* Harta */}
+        <div ref={mapDiv} style={{ height: "500px", width: "100%" }}></div>
+      </div>
+    );
+  };
+  
+  export default MapPage;
